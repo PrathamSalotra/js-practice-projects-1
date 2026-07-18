@@ -11,6 +11,11 @@ const closebtn = document.querySelector("#closeBtn");
 const moveupbtn = document.querySelector("#moveUpBtn");
 const movedownbtn = document.querySelector("#moveDownBtn");
 const cardcontainer = document.querySelector("#cardsContainer");
+const emergencybtn = document.querySelector(".black");
+const importantbtn = document.querySelector(".purple");
+const urgentbtn = document.querySelector(".brown");
+const norushbtn = document.querySelector(".teal");
+const resetbtn = document.querySelector(".white");
 
 function saveinlocal(obj){
     if(localStorage.getItem("tasks") === null){
@@ -184,6 +189,30 @@ function validatedata(evt) {
     
 }
 
+function filterCards(priority) {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    const filteredTasks = tasks.filter(function(task) {
+        return task.priority === priority;
+    });
+
+    cardsContainer.innerHTML = "";
+
+    filteredTasks.forEach(function(task) {
+        createCard(task);
+    });
+}
+
+function showAllCards() {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    cardsContainer.innerHTML = "";
+
+    tasks.forEach(function(task) {
+        createCard(task);
+    });
+}
+
 addbtn.addEventListener("click", ()=>{
     formlay.style.display = "initial";
 });
@@ -208,3 +237,23 @@ movedownbtn.addEventListener("click",function(){
         cardcontainer.appendChild(firstchild);
     }
 })
+
+emergencybtn.addEventListener("click", function () {
+    filterCards("Emergency");
+});
+
+importantbtn.addEventListener("click", function () {
+    filterCards("Important");
+});
+
+urgentbtn.addEventListener("click", function () {
+    filterCards("Urgent");
+});
+
+norushbtn.addEventListener("click", function () {
+    filterCards("No Rush");
+});
+
+resetbtn.addEventListener("click", function () {
+    showAllCards();
+});

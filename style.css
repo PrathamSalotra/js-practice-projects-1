@@ -191,6 +191,10 @@ main{
     background:#17b8a6;
 }
 
+.white{
+    background:#e4e7e7;
+}
+
 
 #overlay{
     position:fixed;
