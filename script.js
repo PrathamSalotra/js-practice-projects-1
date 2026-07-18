@@ -195,3 +195,16 @@ closebtn.addEventListener("click",()=>{
 form.addEventListener("submit",validatedata);
 
 showCard();
+
+moveupbtn.addEventListener("click",function(){
+    let lastchild = cardcontainer.lastElementChild;
+    if(lastchild){
+        cardcontainer.insertBefore(lastchild,cardcontainer.firstElementChild);
+    }
+})
+movedownbtn.addEventListener("click",function(){
+    let firstchild = cardcontainer.firstElementChild;
+    if(firstchild){
+        cardcontainer.appendChild(firstchild);
+    }
+})
