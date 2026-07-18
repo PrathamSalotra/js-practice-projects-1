@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Notes</title>
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="overlay">
+        <form id="noteForm">
+          <h1>New Call</h1>
+
+          <div class="input-group">
+            <label>Image URL</label>
+            <input
+              required
+              id="imageInput"
+              type="text"
+              placeholder="https://example.com/photo.jpg"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Full Name</label>
+            <input
+              required
+              id="nameInput"
+              type="text"
+              placeholder="Enter full name"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Home Town</label>
+            <input
+              required
+              id="townInput"
+              type="text"
+              placeholder="Enter home town"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Purpose</label>
+            <input
+              required
+              id="purposeInput"
+              type="text"
+              placeholder="Quick appointment note"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Category</label>
+
+            <div class="priority-options">
+              <label for="emergency">
+                <input
+                  required
+                  type="radio"
+                  id="emergency"
+                  name="priority"
+                  value="Emergency"
+                />
+                <span>Emergency</span>
+              </label>
+
+              <label for="important">
+                <input
+                  type="radio"
+                  id="important"
+                  name="priority"
+                  value="Important"
+                />
+                <span>Important</span>
+              </label>
+
+              <label for="urgent">
+                <input
+                  type="radio"
+                  id="urgent"
+                  name="priority"
+                  value="Urgent"
+                />
+                <span>Urgent</span>
+              </label>
+
+              <label for="norush">
+                <input
+                  type="radio"
+                  id="norush"
+                  name="priority"
+                  value="No Rush"
+                />
+                <span>No Rush</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="formbuttons">
+            <button id="createBtn" type="submit">Create Note</button>
+
+            <button id="closeBtn" type="button">Close</button>
+          </div>
+        </form>
+      </div>
+      <!-- Left Controls -->
+
+      <div class="sidebar">
+        <button id="addBtn">
+          <i class="ri-add-line"></i>
+        </button>
+
+        <button id="moveUpBtn">
+          <i class="ri-arrow-up-line"></i>
+        </button>
+
+        <button id="moveDownBtn">
+          <i class="ri-arrow-down-line"></i>
+        </button>
+      </div>
+
+      <!-- Cards -->
+
+      <section id="cardsContainer">
+        <!-- Example Card -->
+      </section>
+
+      <!-- Color Palette -->
+
+      <div class="colors">
+        <div class="color black"></div>
+
+        <div class="color purple"></div>
+
+        <div class="color brown"></div>
+
+        <div class="color teal"></div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

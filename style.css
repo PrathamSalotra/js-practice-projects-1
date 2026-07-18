@@ -1,0 +1,308 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:#262626;
+    color:white;
+    overflow:hidden;
+}
+
+
+main{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    padding:40px;
+}
+
+
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.sidebar button{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid #4a4a4a;
+    background:#2f2f2f;
+    color:white;
+    cursor:pointer;
+    font-size:22px;
+    transition:.3s;
+}
+
+.sidebar button:hover{
+    background:#444;
+}
+
+
+#cardsContainer{
+    position:relative;
+    width:340px;
+    height:250px;
+}
+
+
+.card{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:340px;
+
+    background:#2b2b2b;
+    border-radius:18px;
+    padding:22px;
+    border:1px solid #3b3b3b;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease,
+        box-shadow .35s ease;
+}
+
+/* Top card */
+.card.active{
+    z-index:3;
+    transform:translateY(0) scale(1);
+    opacity:1;
+    box-shadow:0 18px 45px rgba(0,0,0,.45);
+}
+
+/* Second card */
+.card.second{
+    z-index:2;
+    transform:translateY(12px) scale(.97);
+    opacity:.8;
+}
+
+/* Third card */
+.card.third{
+    z-index:1;
+    transform:translateY(24px) scale(.94);
+    opacity:.55;
+}
+
+/* Remaining cards */
+.card.hidden{
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(36px) scale(.9);
+}
+
+.card img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.details{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:25px;
+}
+
+.details .title{
+    color:#9f9f9f;
+    font-size:14px;
+}
+
+.details p{
+    margin-top:4px;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.callBtn{
+    background:black;
+    color:white;
+    border:none;
+    border-radius:30px;
+    padding:12px 24px;
+    cursor:pointer;
+}
+
+.messageBtn{
+    background:none;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+
+.colors{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.color{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:.3s;
+}
+
+.color:hover{
+    transform:scale(1.15);
+}
+
+.black{
+    background:black;
+}
+
+.purple{
+    background:#4b00b8;
+}
+
+.brown{
+    background:#5f3200;
+}
+
+.teal{
+    background:#17b8a6;
+}
+
+
+#overlay{
+    position:fixed;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:100;
+}
+
+
+#noteForm{
+    width:520px;
+    height: 600px;
+    background:#2b2b2b;
+    border-radius:20px;
+    padding:20px;
+    border:1px solid #3d3d3d;
+}
+
+#noteForm h1{
+    font-size: 20px;
+}
+
+.input-group{
+    margin-bottom:10px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:1px;
+    font-size:13px;
+}
+
+.input-group input:not([type="radio"]){
+    width:100%;
+    padding:15px 18px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    background:#3b3b3b;
+    color:white;
+    font-size:15px;
+}
+
+.input-group input::placeholder{
+    color:#888;
+}
+
+
+.priority-options{
+    display:flex;
+    flex-direction:column;
+    margin-top:8px;
+}
+
+.priority-options label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    font-size:15px;
+    color:white;
+}
+
+.priority-options input[type="radio"]{
+    width:auto;
+    margin:0;
+    accent-color:#ffffff;
+    cursor:pointer;
+}
+
+.priority-options span{
+    user-select:none;
+}
+
+.formbuttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#createBtn,
+#closeBtn{
+    width:46%;
+    padding:16px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin-top:0px;
+    font-size:16px;
+}
+
+#createBtn{
+    background:black;
+    color:white;
+}
+
+#createBtn:hover{
+    background:#141414;
+}
+
+#closeBtn{
+    background:#8b0000;
+    color:white;
+}
+
+#closeBtn:hover{
+    background:#b00000;
+}
